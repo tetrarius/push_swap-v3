@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:37:56 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 11:38:16 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:54:56 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef enum e_strategy
 }	t_strategy;
 
 /* --- STRUCTURES --- */
-// Узел двусвязного списка
+// Stacks
 typedef struct s_node
 {
 	int				value;
@@ -37,7 +37,7 @@ typedef struct s_node
 	struct s_node	*prev;
 }	t_node;
 
-// Главная структура окружения
+// GENERAL ENVIRONMENT
 typedef struct s_env
 {
 	t_node		*a;
@@ -49,7 +49,7 @@ typedef struct s_env
 	t_strategy	strategy;
 	double		disorder;
 
-	// Счетчики для --bench
+	// calc --bench
 	int			total_ops;
 	int			sa;
 	int			sb;
