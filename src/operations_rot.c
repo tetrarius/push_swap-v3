@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations_rot.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/20 12:43:06 by aravakia          #+#    #+#             */
+/*   Updated: 2026/04/20 12:43:24 by aravakia         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 /* Сдвигает все элементы стека вверх на один. Первый становится последним. */
@@ -12,10 +24,8 @@ static void	rotate(t_node **stack)
 	last = first;
 	while (last->next)
 		last = last->next;
-	
 	*stack = first->next;
 	(*stack)->prev = NULL;
-	
 	last->next = first;
 	first->prev = last;
 	first->next = NULL;

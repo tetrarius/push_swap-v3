@@ -6,7 +6,6 @@ SRC_DIR     = src
 INC_DIR     = inc
 OBJ_DIR     = obj
 
-# Исходные файлы (добавлены utils.c и split.c для замены libft)
 SRC_FILES   = main.c parse.c stack_utils.c disorder.c \
               operations_push.c operations_swap.c \
               operations_rot.c operations_rev.c \
