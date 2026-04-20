@@ -1,37 +1,29 @@
-NAME        = push_swap
-CC          = cc
-CFLAGS      = -Wall -Wextra -Werror
+NAME    = push_swap
+CC      = cc
+CFLAGS  = -Wall -Wextra -Werror -Iinc
 
-SRC_DIR     = src
-INC_DIR     = inc
-OBJ_DIR     = obj
+SRC     = src/main.c src/parse.c src/stack_utils.c src/disorder.c \
+          src/operations_push.c src/operations_swap.c \
+          src/operations_rot.c src/operations_rev.c \
+          src/strategy_simple.c src/strategy_medium.c \
+          src/strategy_complex.c src/strategy_adaptive.c \
+          src/benchmark.c src/utils.c src/split.c
 
-SRC_FILES   = main.c parse.c stack_utils.c disorder.c \
-              operations_push.c operations_swap.c \
-              operations_rot.c operations_rev.c \
-              strategy_simple.c strategy_medium.c \
-              strategy_complex.c strategy_adaptive.c \
-              benchmark.c utils.c split.c
-
-SRC         = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
-OBJ         = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
-
-INC         = -I$(INC_DIR)
+OBJ     = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	rm -f $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
