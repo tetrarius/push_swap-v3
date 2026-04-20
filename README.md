@@ -29,11 +29,11 @@ The program analyzes the input and routes it to one of four strategies:
 4. **Complex O(n log n):** **Radix Sort**. Evaluates the binary representation of each number's rank (index) to efficiently sort large, highly chaotic stacks (Disorder >= 50%).
 
 ## 📊 Performance Benchmarks
-| Elements | Average Operations | 42 Subject Limit (Max Score) |
-|----------|--------------------|------------------------------|
-| 3        | 1 - 2              | <= 3                         |
-| 5        | 9 - 11             | <= 12                        |
-| 100      | ~1080              | < 700 (5 pts) / < 1100 (3 pts)|
+| Elements | Average Operations | 42 Subject Limit (Max Score)   |
+|----------|--------------------|--------------------------------|
+| 3        | 1 - 2              | <= 3                           |
+| 5        | 9 - 11             | <= 12                          |
+| 100      | ~1080              | < 700 (5 pts) / < 1100 (3 pts) |
 | 500      | ~6780              | < 5500 (5 pts) / < 7000 (4 pts)|
 
 ---
@@ -44,3 +44,34 @@ The program analyzes the input and routes it to one of four strategies:
 Build the executable using the provided Makefile:
 ```bash
 make
+
+Usage
+
+Run the program with a list of integers:
+Bash
+
+./push_swap 3 2 5 1 4
+
+Benchmark Mode (Custom Feature)
+
+Use the --bench flag to see the internal disorder calculation, strategy selected, and operation count output to stderr:
+Bash
+
+./push_swap --bench 9 1 8 2 7 3 6 4 5
+
+🔄 Valid Instructions
+
+    sa, sb, ss: Swap the first two elements at the top of the stack.
+
+    pa, pb: Push the top element from one stack to the other.
+
+    ra, rb, rr: Rotate the stack up (the first element becomes the last).
+
+    rra, rrb, rrr: Reverse rotate the stack down (the last element becomes the first).
+
+🧪 Testing with Official Checker
+
+To test the sorting validity and count operations on 100 random numbers (Linux):
+Bash
+
+ARG=$(shuf -i 1-100 -n 100 | tr '\n' ' '); ./push_swap $ARG | ./checker_linux $ARG && ./push_swap $ARG | wc -l
