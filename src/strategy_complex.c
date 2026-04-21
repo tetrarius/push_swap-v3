@@ -6,14 +6,14 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:45:11 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 12:45:14 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:32:55 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* 1. Присваивает каждому узлу его ранг (от 0 до N-1) */
-static void	assign_indices(t_node *a)
+void	assign_indices(t_node *a)
 {
 	t_node	*curr;
 	t_node	*cmp;
@@ -73,7 +73,6 @@ void	run_complex(t_env *env)
 
 	if (env->size_a == 0)
 		return ;
-	assign_indices(env->a);
 	size = env->size_a;
 	max_bits = get_max_bits(size - 1);
 	i = 0;

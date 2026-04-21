@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:37:56 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 13:54:56 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:33:32 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	run_simple(t_env *env);
 void	run_medium(t_env *env);
 void	run_complex(t_env *env);
 void	run_adaptive(t_env *env);
+void	assign_indices(t_node *a);
 
 /* benchmark.c */
 void	print_benchmark(t_env *env);

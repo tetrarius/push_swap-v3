@@ -30,7 +30,7 @@ static void	put_num_stderr(int n)
 	write(2, &c, 1);
 }
 
-/* Вывод процентов (хаоса) с двумя знаками после запятой */
+/* Print DISORDER 0.00 */
 static void	print_disorder(double disorder)
 {
 	int		int_part;

@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:52:10 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 11:52:36 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:32:47 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int	main(int argc, char **argv)
 	if (start_idx >= argc)
 		return (0);
 	parse_arguments(&env, argc - start_idx + 1, argv + start_idx - 1);
+	assign_indices(env.a);
 	calculate_disorder(&env);
 	if (!is_sorted(env.a))
 		execute_strategy(&env);

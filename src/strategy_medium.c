@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:45:46 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 12:45:47 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/21 17:23:03 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	push_chunks(t_env *env, long step, long limit, int max)
 		curr_size = env->size_a;
 		while (i < curr_size)
 		{
-			if (env->a->value <= limit)
+			if (env->a->index <= limit)
 				pb(env, true);
 			else
 				ra(env, true);
@@ -103,29 +103,17 @@ static void	push_back_to_a(t_env *env)
 /* 5. Главная функция стратегии Medium O(n*sqrt(n)) */
 void	run_medium(t_env *env)
 {
-	int		min;
-	int		max;
+	int		max_idx;
 	int		chunks;
 	long	step;
-	t_node	*a;
 
 	if (env->size_a == 0)
 		return ;
-	a = env->a;
-	min = a->value;
-	max = a->value;
-	while (a)
-	{
-		if (a->value < min)
-			min = a->value;
-		if (a->value > max)
-			max = a->value;
-		a = a->next;
-	}
+	max_idx = env->size_a - 1;
 	chunks = ft_sqrt(env->size_a);
 	if (chunks == 0)
 		chunks = 1;
-	step = (long)(max - min) / chunks;
-	push_chunks(env, step, min + step, max);
+	step = env->size_a / chunks;
+	push_chunks(env, step, step, max_idx);
 	push_back_to_a(env);
 }
