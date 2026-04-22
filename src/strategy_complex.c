@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-/* 1. Присваивает каждому узлу его ранг (от 0 до N-1) */
+/* Indexation (0 to N-1) */
 void	assign_indices(t_node *a)
 {
 	t_node	*curr;

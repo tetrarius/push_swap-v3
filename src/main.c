@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-/* 1. Инициализация всех счетчиков и указателей */
+/* 1. Initialization of all counters and pointers */
 static void	init_env(t_env *env)
 {
 	env->a = NULL;
@@ -36,7 +36,7 @@ static void	init_env(t_env *env)
 	env->rrr = 0;
 }
 
-/* 2. Чтение флагов из начала аргументов */
+/* Read Flags */
 static int	parse_flags(int argc, char **argv, t_env *env)
 {
 	int	i;
@@ -61,7 +61,7 @@ static int	parse_flags(int argc, char **argv, t_env *env)
 	return (i);
 }
 
-/* 3. Роутер для запуска нужной стратегии сортировки */
+/* Strategy router */
 static void	execute_strategy(t_env *env)
 {
 	if (env->strategy == STRAT_SIMPLE)
@@ -74,7 +74,7 @@ static void	execute_strategy(t_env *env)
 		run_adaptive(env);
 }
 
-/* 4. Главная функция программы */
+/* MINE F */
 int	main(int argc, char **argv)
 {
 	t_env	env;

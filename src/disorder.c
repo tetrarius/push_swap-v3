@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-/* Вспомогательная функция для подсчета пар и ошибок */
+/* Count Pairs and mistakes */
 static void	count_mistakes(t_node *a, int *mistakes, int *total_pairs)
 {
 	t_node	*i;
@@ -33,11 +33,7 @@ static void	count_mistakes(t_node *a, int *mistakes, int *total_pairs)
 	}
 }
 
-/*
-** Вычисляет уровень хаоса (disorder) в стеке A.
-** 0.0 - полностью отсортирован
-** 1.0 - полностью отсортирован в обратном порядке
-*/
+/* 0.0 - sorted, 1.0 back sorted */
 void	calculate_disorder(t_env *env)
 {
 	int	mistakes;

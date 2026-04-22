@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-/* Проверка: состоит ли строка только из цифр и знака */
+/* Check is NUM */
 static int	is_num(char *str)
 {
 	int	i;
@@ -31,7 +31,7 @@ static int	is_num(char *str)
 	return (1);
 }
 
-/* Конвертация строки в long для проверки лимитов INT */
+/* Convert to long for limits check INT */
 static long	ft_atol(const char *str)
 {
 	long	res;
@@ -55,7 +55,7 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
-/* Проверка на дубликаты в стеке A */
+/* Dub chack in A */
 static int	is_dup(t_node *a, int val)
 {
 	while (a)
@@ -67,7 +67,7 @@ static int	is_dup(t_node *a, int val)
 	return (0);
 }
 
-/* Валидация и добавление одного токена (числа) в стек */
+/* Validation and add 1 node to A */
 static void	add_token(t_env *env, char *token, char **split_arr)
 {
 	long	val;
@@ -94,7 +94,7 @@ static void	add_token(t_env *env, char *token, char **split_arr)
 	env->size_a++;
 }
 
-/* Главная функция парсинга аргументов */
+/* Parsing arguments */
 void	parse_arguments(t_env *env, int argc, char **argv)
 {
 	int		i;
