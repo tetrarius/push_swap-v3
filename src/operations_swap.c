@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-/* Меняет местами два верхних элемента стека */
+/* swap first <-> next */
 static void	swap(t_node **stack)
 {
 	t_node	*first;
