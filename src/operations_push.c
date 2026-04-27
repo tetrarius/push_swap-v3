@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:39:37 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/27 13:43:15 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 15:34:20 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	pa(t_env *env, bool print)
 	env->size_a++;
 	env->pa++;
 	env->total_ops++;
-	if (print)
+	if (print && !env->count_only)	//count only
 		ft_putstr_fd("pa\n", 1);
 }
 
@@ -52,6 +52,6 @@ void	pb(t_env *env, bool print)
 	env->size_b++;
 	env->pb++;
 	env->total_ops++;
-	if (print)
+	if (print && !env->count_only)  //count only
 		ft_putstr_fd("pb\n", 1);
 }

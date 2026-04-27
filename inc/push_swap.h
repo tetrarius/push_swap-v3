@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:37:56 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/21 17:33:32 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 15:04:03 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_env
 	int			size_b;
 
 	bool		bench_flag;
+	bool		count_only;
 	t_strategy	strategy;
 	double		disorder;
 
