@@ -6,13 +6,13 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:46:01 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 12:46:03 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 14:09:48 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Находит позицию (индекс) минимального элемента в стеке A */
+/* Finds the pos (index) of min el in A */
 static int	get_min_index(t_node *a)
 {
 	int		min;
@@ -37,8 +37,7 @@ static int	get_min_index(t_node *a)
 	return (min_idx);
 }
 
-/* Крутит стек A так, чтобы минимальный элемент оказался на самом верху.
-   Выбирает кратчайший путь: ra или rra. */
+/* Rotate A until min el to the top. Chooses the shortest path: RA or  RRA. */
 static void	rotate_a_to_min(t_env *env, int min_index)
 {
 	int	size;
@@ -62,7 +61,7 @@ static void	rotate_a_to_min(t_env *env, int min_index)
 	}
 }
 
-/* Главная функция O(n^2) стратегии */
+/* General function Simple strategy O(n^2) */
 void	run_simple(t_env *env)
 {
 	int	min_idx;

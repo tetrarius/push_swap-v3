@@ -6,13 +6,13 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:39:37 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 12:40:05 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 13:43:15 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Переносит верхний элемент из стека src на верхушку стека dest */
+/* move 1st node from src to dest */
 static void	push(t_node **src, t_node **dest)
 {
 	t_node	*tmp;

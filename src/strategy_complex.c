@@ -6,7 +6,7 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:45:11 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/21 17:32:55 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 13:58:13 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	assign_indices(t_node *a)
 	}
 }
 
-/* 2. Считает количество бит, необходимых для макс. индекса */
+/* 2. Calculates the numbers of bits for reprezent maximum index */
 static int	get_max_bits(int max_index)
 {
 	int	max_bits;
@@ -46,7 +46,7 @@ static int	get_max_bits(int max_index)
 	return (max_bits);
 }
 
-/* 3. Выполняет один проход по биту i */
+/* 3. Do 1 pass for bit i */
 static void	process_bit(t_env *env, int i, int size)
 {
 	int	j;
@@ -64,7 +64,7 @@ static void	process_bit(t_env *env, int i, int size)
 		pa(env, true);
 }
 
-/* 4. Главная функция стратегии Complex O(n log n) */
+/* 4. General function Complex strategy O(n log n) */
 void	run_complex(t_env *env)
 {
 	int	i;

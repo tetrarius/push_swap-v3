@@ -6,13 +6,13 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:45:46 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/21 17:23:03 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 14:05:00 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* 1. Приближенное вычисление квадратного корня */
+/* 1. Calculation of the square root */
 static int	ft_sqrt(int nb)
 {
 	int	i;
@@ -29,7 +29,7 @@ static int	ft_sqrt(int nb)
 	return (i - 1);
 }
 
-/* 2. Перенос элементов в B слоями (чанками) */
+/* 2. Move elements to stack B in layers (chunks) */
 static void	push_chunks(t_env *env, long step, long limit, int max)
 {
 	int	i;
@@ -53,7 +53,7 @@ static void	push_chunks(t_env *env, long step, long limit, int max)
 	}
 }
 
-/* 3. Ищет индекс максимального элемента в стеке B */
+/* 3. Finds the index of maximum el in B */
 static int	get_max_index(t_node *b)
 {
 	int		max;
@@ -78,7 +78,7 @@ static int	get_max_index(t_node *b)
 	return (max_idx);
 }
 
-/* 4. Возвращает элементы из B в A по убыванию */
+/* 4. Retuns el from B to A in descending order */
 static void	push_back_to_a(t_env *env)
 {
 	int	max_idx;
@@ -100,7 +100,7 @@ static void	push_back_to_a(t_env *env)
 	}
 }
 
-/* 5. Главная функция стратегии Medium O(n*sqrt(n)) */
+/* 5. General function Medium strategy O(n*sqrt(n)) */
 void	run_medium(t_env *env)
 {
 	int		max_idx;

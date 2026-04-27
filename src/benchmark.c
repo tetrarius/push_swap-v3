@@ -6,13 +6,13 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:43:10 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 11:45:01 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 13:40:06 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Вспомогательная функция для вывода чисел в stderr */
+/* Helper - int print in stderr */
 static void	put_num_stderr(int n)
 {
 	char	c;
@@ -53,7 +53,7 @@ static void	print_disorder(double disorder)
 	write(2, "%\n", 2);
 }
 
-/* Первая часть метрик (swap и push) */
+/* 1st part metrics (swap и push) */
 static void	print_ops_part1(t_env *env)
 {
 	ft_putstr_fd("[bench] sa: ", 2);
@@ -69,7 +69,7 @@ static void	print_ops_part1(t_env *env)
 	write(2, "\n", 1);
 }
 
-/* Вторая часть метрик (rotate и reverse rotate) */
+/* 2dn part metrics (rotate и reverse rotate) */
 static void	print_ops_part2(t_env *env)
 {
 	ft_putstr_fd("[bench] ra: ", 2);
@@ -88,7 +88,7 @@ static void	print_ops_part2(t_env *env)
 	write(2, "\n", 1);
 }
 
-/* Главная функция бенчмарка */
+/* General bench */
 void	print_benchmark(t_env *env)
 {
 	if (!env->bench_flag)

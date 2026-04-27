@@ -6,13 +6,13 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:20:45 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 11:21:48 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 13:54:26 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* 1. Находит индекс минимального элемента в стеке A */
+/* 1. Fined index of min element in stack A */
 static int	get_min_index(t_node *a)
 {
 	int		min;
@@ -37,7 +37,7 @@ static int	get_min_index(t_node *a)
 	return (min_idx);
 }
 
-/* 2. Поднимает минимальный элемент наверх и пушит в B */
+/* 2. Moves the smallest element to the top and push to stack B */
 static void	push_min_to_b(t_env *env)
 {
 	int	min_idx;
@@ -54,7 +54,7 @@ static void	push_min_to_b(t_env *env)
 	pb(env, true);
 }
 
-/* 3. Жесткая сортировка для 3 элементов (максимум 2 операции) */
+/* 3. Sort for 3 el (max 2 op) */
 static void	sort_three(t_env *env)
 {
 	int	first;
@@ -72,7 +72,7 @@ static void	sort_three(t_env *env)
 		sa(env, true);
 }
 
-/* 4. Маршрутизатор для малых чисел (2-5 элементов) */
+/* 4. Router for 5 el (2-5) */
 static void	sort_mini(t_env *env)
 {
 	if (env->size_a == 2)
@@ -92,7 +92,7 @@ static void	sort_mini(t_env *env)
 	}
 }
 
-/* 5. Адаптивная стратегия: проверяет размер, затем хаос */
+/* 5. Adaptive strategy: check size, chack disorder */
 void	run_adaptive(t_env *env)
 {
 	if (env->size_a <= 5)

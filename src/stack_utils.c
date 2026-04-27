@@ -6,13 +6,13 @@
 /*   By: aravakia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 12:44:40 by aravakia          #+#    #+#             */
-/*   Updated: 2026/04/20 12:44:43 by aravakia         ###   ########.fr       */
+/*   Updated: 2026/04/27 13:47:29 by aravakia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Создает новый узел стека */
+/* NEW node */
 t_node	*new_node(int value)
 {
 	t_node	*node;
@@ -26,7 +26,7 @@ t_node	*new_node(int value)
 	return (node);
 }
 
-/* Добавляет узел в конец (на дно) стека */
+/* Add node to bottom */
 void	add_node_bottom(t_node **stack, t_node *node)
 {
 	t_node	*last;
@@ -45,7 +45,7 @@ void	add_node_bottom(t_node **stack, t_node *node)
 	node->prev = last;
 }
 
-/* Полностью очищает стек и освобождает память */
+/* Free Stack, Free Memory */
 void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
@@ -63,7 +63,7 @@ void	free_stack(t_node **stack)
 	*stack = NULL;
 }
 
-/* Проверяет, отсортирован ли стек по возрастанию */
+/* Check Sorted */
 bool	is_sorted(t_node *stack)
 {
 	if (!stack)
